@@ -26,10 +26,10 @@ resource "aws_security_group" "ibm_app_sg" {
 
 # Launch Instance
 resource "aws_instance" "ibm_instance" {
-  ami           = "ami-011996ff98de391d1" 
+  ami           = "ami-0e472ba40eb589f49" 
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.ibm_pub_sb.id
-  key_name      = "ravi"
+  key_name      = "virginie-robel"
   count = 2
   vpc_security_group_ids = [ aws_security_group.ibm_app_sg.id ]
   user_data = file("ecomm.sh")
